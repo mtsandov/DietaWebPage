@@ -150,6 +150,25 @@ input:disabled { background: #f0f0f0; color: #999; }
 .comida-kcal { color: #fff; font-size: .9rem; opacity: .9; margin-right: auto; }
 .total-dia { font-size: .95rem; }
 
+/* Agua */
+.agua-cabecera { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.agua-cabecera h3 { color: var(--celeste); font-size: 1.05rem; }
+.agua-cuerpo { display: flex; gap: 20px; align-items: center; }
+.agua-vaso {
+  position: relative; flex: none; width: 64px; height: 84px; overflow: hidden;
+  border: 3px solid var(--celeste); border-top-width: 0; border-radius: 0 0 14px 14px;
+  display: grid; place-items: center; background: #f3f9fe;
+}
+.agua-nivel { position: absolute; left: 0; right: 0; bottom: 0; background: #9fd0f7; transition: height .4s; }
+.agua-vaso span { position: relative; font-weight: 600; color: var(--azul); }
+.agua-datos { flex: 1; display: grid; gap: 6px; }
+.agua-cifra { font-size: 1.1rem; color: var(--azul); }
+.agua-cifra b { font-size: 1.5rem; }
+.agua-barra { height: 8px; background: #eef4fa; border-radius: 999px; overflow: hidden; }
+.agua-barra div { height: 100%; background: var(--celeste); transition: width .4s; }
+.agua-tomas { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 6px; max-width: 360px; }
+.agua-tomas li { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 10px; }
+
 /* Tablas */
 .tabla-scroll { overflow-x: auto; }
 .tabla { width: 100%; border-collapse: collapse; font-size: .92rem; }

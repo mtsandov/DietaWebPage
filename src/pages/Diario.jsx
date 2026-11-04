@@ -6,6 +6,7 @@ import { fmt, macrosPorcion, repartoEnergia, sumarMacros } from '../lib/nutricio
 import { formatoFecha, hoyISO, sumarDias } from '../lib/fechas'
 import { useConsulta } from '../lib/useConsulta'
 import { PanelAnillos } from '../components/Anillo'
+import AguaCard from '../components/AguaCard'
 import SelectorAlimento from '../components/SelectorAlimento'
 import InputGramos from '../components/InputGramos'
 import AlimentoModal from '../components/AlimentoModal'
@@ -135,6 +136,8 @@ export default function Diario() {
           ›
         </button>
       </div>
+
+      <AguaCard fecha={fecha} metas={metas} />
 
       {(error || errorCarga) && <div className="error tarjeta">{error || errorCarga.message}</div>}
 

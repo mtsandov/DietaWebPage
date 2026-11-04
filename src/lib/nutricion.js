@@ -74,6 +74,12 @@ export function calcularMetas(p) {
   const carbKcal = Math.max(0, calorias - proteina * KCAL.proteina - grasaG * KCAL.grasa)
   const carbohidratos = carbKcal / KCAL.carbohidratos
 
+  // Agua: 1 ml por kcal objetivo (refleja fórmula, actividad y objetivo),
+  // con un mínimo de 35 ml por kg para que un déficit no reduzca la hidratación.
+  const aguaPorKcal = calorias * 1
+  const aguaPorPeso = peso * 35
+  const agua = Math.round(Math.max(aguaPorKcal, aguaPorPeso) / 50) * 50
+
   return {
     formulaUsada: formula,
     imc,
@@ -90,6 +96,8 @@ export function calcularMetas(p) {
     proteinaGkg,
     grasaGkg,
     carbGkg: carbohidratos / baseKg,
+    agua,
+    aguaCriterio: aguaPorKcal >= aguaPorPeso ? 'kcal' : 'peso',
   }
 }
 
